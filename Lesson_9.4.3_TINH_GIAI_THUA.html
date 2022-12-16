@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="number"><button onclick="checkGiaiThua()">Tinh giai thua</button>
+<script>
+    function checkGiaiThua() {
+        let num= +document.getElementById("number").value;
+        let gt=tinhGiaiThua(num);
+        console.log("giai thua>>>>"+gt)
+        document.write(`Giai thua cua ${num} la ${gt}`)
+    }
+    function tinhGiaiThua(a) {
+        let giaiThua=1;
+        for (let i = 1; i <=a; i++) {
+            giaiThua *=i;
+        }return giaiThua;
+    }
+</script>
+</body>
+</html>

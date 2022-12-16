@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Lesson9.4.6_TIM_MIN_MAX.js"></script>
+</head>
+<body>
+<div style="text-align: center">
+    <label id="display"></label><br>
+    <input id="input">
+    <button onclick="checkMinMax()"> Check MIN & MAX</button>
+    <br>
+    <label id="max"></label><p>Max</p>
+    <br>
+    <label id="min"></label><p>Min</p>
+</div>
+
+<script>
+    let arr = [];
+    function checkMinMax() {
+        let input = +document.getElementById("input").value;
+        arr.push(input);
+        document.getElementById("display").innerText = arr.join(",");
+        document.getElementById("input").innerText = " ";
+        let max = checkMax(arr)
+        let min = checkMin(arr);
+        document.getElementById("max").innerText = max;
+        document.getElementById("min").innerText = min;
+    }
+</script>
+</body>
+</html>

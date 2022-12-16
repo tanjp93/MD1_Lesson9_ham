@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: "Times New Roman";
+        }
+    </style>
+</head>
+<body>
+<div>
+    <label id="arr"></label><br>
+    <label id="changeNum"></label><br>
+    <label id="result"> </label><br>
+    <input id="numberInput" width="200px">
+    <button onclick="addArr()">ADD Array</button>
+    <br>
+    <input id="change" width="200px">
+    <button onclick="changeNumber()">Add Number</button>
+    <br>
+    <button onclick="thayDoi()"> Change</button>
+</div>
+<script>
+    let changeArr = [];
+    let arr = [];
+    function addArr() {
+        let num = +document.getElementById("numberInput").value;
+        arr.push(num);
+        document.getElementById("arr").innerHTML = arr.join(",");
+        document.getElementById("numberInput").value = (" ");
+        return arr
+    }
+
+    function changeNumber() {
+        let num1 = +document.getElementById("change").value;
+        if (changeArr.length < 2) {
+            changeArr.push(num1)
+            document.getElementById("changeNum").innerText = changeArr.join(",")
+            document.getElementById("change").value = (" ")
+        } else {
+            document.getElementById("result").innerHTML = "<label style='color: red'>" + "Nhap toi da 2 so" + "</label>"
+        } return changeArr
+    }
+
+    function thayDoi() {
+        changeArr = changeAb(changeArr[0], changeArr[1])
+    }
+
+    function changeAb(a, b, array) {
+        let array1 = [];
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] !== a && array[i] !== b) {
+                array1.push(array[i])
+            } else {
+                if (array[i] == a) {
+                    array1.push(b)
+                } else array1.push(a)
+            }
+        }
+        return array1
+        // let c = a;
+        // a = b;
+        // b = c;
+        // return a, b
+    }
+</script>
+</body>
+</html>

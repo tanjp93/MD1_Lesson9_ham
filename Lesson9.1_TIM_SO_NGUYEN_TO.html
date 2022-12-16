@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+    <h1>Kiem tra so nguyen to</h1>
+    <label id="arr"></label><br>
+    <input type="number" max="1000" min="2" id="number">
+    <button onclick="addInArr()">Kiem tra</button>
+    <br>
+    <label>So nguyen to la :<p id="display"></p>
+    </label>
+</div>
+<script>
+    let arr = [];
+    let result = [];
+    function addInArr() {
+        let number1 = +document.getElementById('number').value;
+        arr.push(number1)
+        document.getElementById("arr").innerHTML = arr;
+        for (let i = 0; i < arr.length; i++) {
+            if (isPrime(arr[i])){
+                let newNum = arr.slice(i,i+1);
+                result.push(newNum.join(""))
+            }
+        }
+        document.getElementById("display").innerText= result.join(",");
+        result= [];
+        document.getElementById("number").value= "" ;
+    }
+    function isPrime(num) {
+        for (let i = 2; i < num; i++) {
+            if(num%i==0) {
+                return false
+            }
+        }
+        return true
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label>Nhap ban kinh</label><input id="input"><br>
+    <label>Dien tich Hinh tron</label><p id="dienTich"></p><br>
+    <label>Chu vi hinh tron</label><p id="chuVi"></p><br>
+    <button onclick="checkResult()">Result</button>
+
+</div>
+<script>
+    function dienTich(a) {
+        const PI=Math.PI;
+        let dt=PI*Math.pow(a,2);
+        return dt;
+    }
+    function chuVi(b) {
+        const PI=Math.PI;
+        let cv=PI*2*b;
+        return cv;
+    }
+    function checkResult() {
+        let radius=+document.getElementById('input').value;
+        let chuViR;
+        let dienTichr;
+        dienTichr=dienTich(radius);
+        document.getElementById("dienTich").innerHTML=dienTichr;
+        chuViR=chuVi(radius);
+        document.getElementById("chuVi").innerHTML=chuViR;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label ><input id="num" type="number"><button onclick="checkNumber()">Check Result</button></label><br>
+<label id="kq"></label>
+<script>
+  function checkNumber() {
+    let inputNumber=+document.getElementById('num').value;
+    let result;
+    result=binhPhuong(inputNumber);
+    document.getElementById('kq').innerText=result;
+  }
+  function binhPhuong(a) {
+    let binhPhuong=Math.pow(a,2)
+    return binhPhuong
+  }
+</script>
+</body>
+</html>

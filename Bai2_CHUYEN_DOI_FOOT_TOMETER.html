@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+    <h1>Chuyển đổi giữa foot và meters </h1><br>
+    <input id="num">
+    <select id="input">
+        <option value="meters">meters</option>
+        <option value="foot">foot</option>
+    </select><br>
+    <label id="result"></label>
+    <select id="output">
+        <option value="meters">meters</option>
+        <option value="foot">foot</option>
+    </select>
+    <button onclick="changeMeters()">CHANGE</button>
+</div>
+<script>
+    function changeMeters() {
+        let inputNum = +document.getElementById("num").value;
+        let inputType = document.getElementById("input").value;
+        let outputType= document.getElementById("output").value;
+        let result;
+        console.log("inputType>>>>"+inputType)
+        if ( inputType===outputType){
+            result=inputNum;
+        }else if (inputType=="meters"){
+            result=meterToFoot(inputNum);
+        }else {
+            result=footToMeter(inputNum)
+        }
+        document.getElementById("result").innerText=result;
+    }
+    function meterToFoot(meter) {
+        let foot = 3.279 * meter;
+        return foot;
+    }
+
+    function footToMeter(foot) {
+        let meter = 0.305 * foot;
+        return meter;
+    }
+</script>
+</body>
+</html>

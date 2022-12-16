@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+    <input id="number">
+    <select id="selectInput">
+        <option id="meterInput" value="meter">Meter</option>
+        <option id="footInput" value="foot">Foot</option>
+    </select>
+    <p>to <label id="output"></label>
+        <select id="selectOutput">
+            <option id="meterOutput" value="meter">Meter</option>
+            <option id="footOutput" value="foot">Foot</option>
+        </select>
+    </p>
+    <br>
+    <button onclick="converUnit()">CONVERT
+    </button>
+</div>
+<script>
+    function converUnit() {
+        let input = +document.getElementById('number').value;
+        let inputType = document.getElementById("selectInput").value;
+        let OutputType = document.getElementById("selectOutput").value;
+        let outputResult = "";
+        if (inputType === OutputType) {
+            outputResult = input;
+        } else {
+            if (inputType == "meter") {
+                outputResult = meterToFoot(input)
+                console.log(inputType, OutputType)
+            } else {
+                outputResult = footToMeter(input);
+            }
+        }
+        document.getElementById('output').innerText = outputResult;
+    }
+
+    function footToMeter(foot) {
+        let meter = 0.305 * foot;
+        return meter
+    }
+
+    function meterToFoot(meter) {
+        let foot = 3.279 * meter
+        return foot
+    }
+</script>
+</body>
+</html>

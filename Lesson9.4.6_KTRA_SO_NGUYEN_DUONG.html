@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  checkInteger()
+  function checkInteger() {
+    let input=prompt(`Hay Nhap So`,);
+    let inputNumber=parseInt(input)
+    let check=laSoNguyenDuong(inputNumber);
+    if (check){
+      document.write(`${input} la so nguyen duong`)
+    }else {document.write(`${input} khong la so nguyen duong`)}
+  }
+
+  function laSoNguyenDuong(value){
+    if (Number.isInteger(value) && value > 0){
+      return true
+    }else false
+  }
+</script>
+</body>
+</html>
