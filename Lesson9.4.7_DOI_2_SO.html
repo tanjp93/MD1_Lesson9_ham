@@ -10,14 +10,14 @@
     </style>
 </head>
 <body>
-<div>
+<div style="text-align: center">
     <label id="arr"></label><br>
     <label id="changeNum"></label><br>
     <label id="result"> </label><br>
-    <input id="numberInput" width="200px">
+    <input type="number" id="numberInput" width="200px">
     <button onclick="addArr()">ADD Array</button>
     <br>
-    <input id="change" width="200px">
+    <input type="number" id="change" width="200px">
     <button onclick="changeNumber()">Add Number</button>
     <br>
     <button onclick="thayDoi()"> Change</button>
@@ -32,7 +32,6 @@
         document.getElementById("numberInput").value = (" ");
         return arr
     }
-
     function changeNumber() {
         let num1 = +document.getElementById("change").value;
         if (changeArr.length < 2) {
@@ -43,9 +42,10 @@
             document.getElementById("result").innerHTML = "<label style='color: red'>" + "Nhap toi da 2 so" + "</label>"
         } return changeArr
     }
-
     function thayDoi() {
-        changeArr = changeAb(changeArr[0], changeArr[1])
+        changeArr = changeAb(changeArr[0], changeArr[1],arr)
+        console.log("changeArr>>>"+ changeArr);
+        document.getElementById("result").innerHTML=changeArr;
     }
 
     function changeAb(a, b, array) {
