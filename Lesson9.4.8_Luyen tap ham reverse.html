@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap ham reverse</title>
+</head>
+<body>
+<div>
+    <button onclick="insertArr()">Insert</button><input width="200px" placeholder="Nhap mang toi da 10 phan tu" id="number"> <p id="array"></p> <br>
+    <button onclick="actionReverse()">Reverse</button><label id="kq"></label>
+</div>
+<script>
+    let arr=[];
+    function insertArr(){
+        let num=+document.getElementById("number").value;
+        if (arr.length<10){
+            arr.push(num);
+            document.getElementById("array").innerHTML=arr.join(",")
+            document.getElementById("number").value=" "
+        } return arr;
+    }
+    function actionReverse() {
+        let reverseArr= reverse(arr)
+        document.getElementById("kq").innerHTML=reverseArr;
+        return reverseArr
+    }
+    function reverse(array){
+       array= array.reverse()
+        return array;
+    }
+</script>
+</body>
+</html>
